@@ -23,4 +23,7 @@ GPU_LAYERS = 31 # 0 means 'no GPU' - if GPU try 50 or less - then probably need 
 REPETITION_PENALTY = 1 # 1.13 - range is 1 (no penalty, default) to 'infinity'
 
 # TEMPERATURE = 0.5
-TEMPERATURE = 0.5 # range is normally 0 (consistent) to 1 (more 'creative')
+# - with Mistral-7B:
+# -- Possibly setting Temp = 1 (not 0.5) adds more details to the DOT output ....
+# -- Higher temp does help with the DOT -> natural language inference (more text is generated).
+TEMPERATURE = 1 # range is normally 0 (consistent) to 1 (more 'creative')

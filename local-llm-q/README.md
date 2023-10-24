@@ -2,9 +2,13 @@
 
 ## References
 
-https://huggingface.co/TheBloke/CodeLlama-13B-GGUF
+Quantized versions are here:
 
-https://www.youtube.com/watch?v=rZz5AORu8zE
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF
+
+Q4_K_M:
+
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/blob/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf
 
 ## Usage on Windows - Quick start (for Unix, use the .sh scripts)
 

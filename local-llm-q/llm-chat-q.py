@@ -5,7 +5,7 @@ from ctransformers import AutoModelForCausalLM
 import config
 import util_time
 
-# ref https://huggingface.co/TheBloke/CodeLlama-13B-GGUF
+# ref - https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF
 # ref https://www.youtube.com/watch?v=rZz5AORu8zE
 def load_llm():
     llm = AutoModelForCausalLM.from_pretrained(
