@@ -23,7 +23,7 @@ env\Scripts\python -v
 
 Install and run the LLM.
 
-- warning: this downloads the LLM which is about 7 GB (multiple files).
+- warning: this downloads the LLM which is about 4.4 GB (multiple files).
 
 - the files are downloaded to this folder:
 
@@ -34,11 +34,7 @@ install.bat
 go.bat
 ```
 
-- output: prompt sent to LLM, and its response:
-
-```
-xxx
-```
+- a local web site launches, where you can interact with the LLM
 
 When done, deactivate the Python environment:
 
@@ -57,14 +53,35 @@ where python
 - REPETITION_PENALTY = 1 (default)
 - TEMPERATURE = 0.5
 
-Prompt :
+Prompt:
+
+- prompt sent to LLM: (the extra formatting like `<s>[INST]` is added programatically)
 
 ```
-xxx
+ <s>[INST] 
+Generate a summary of the actions performed by User, as described in this DOT graph:
+
+digraph G {
+User -> MySection_1 [label="renamed from My Cars to My Favourite Cars"]
+User -> MySection_0 [label="Removed"]
+User -> MySection_3 [label="Added"]
+}
+ [/INST]
 ```
 
 Response:
 
+
 ```
-xxx
+ The user performed the following actions as described in the DOT graph:
+
+1. Renamed the section "My Cars" to "My Favourite Cars".
+2. Removed the section "MySection_0".
+3. Added the section "MySection_3".
 ```
+
+`Time taken: 0:00:11.640128s`
+
+#### License = Apache 2.0
+
+- Mistral 7B was released under `Apache 2.0 license` - see [Mistral 7B release](https://mistral.ai/news/announcing-mistral-7b/)

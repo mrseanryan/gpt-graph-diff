@@ -127,8 +127,12 @@ digraph {
 
 print(f"Hosting local LLM - you do NOT need to be logged in to HF")
 
+examples_for_mistral = []
+for example in examples:
+    examples_for_mistral.append( f"<s>[INST] {example} [/INST]")
+
 gr.ChatInterface(
     fn = llm_function,
     title=title,
-    examples = examples
+    examples = examples_for_mistral
     ).launch()
