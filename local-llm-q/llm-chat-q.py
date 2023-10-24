@@ -42,7 +42,7 @@ def llm_function(message, chat_history):
 
     return response
 
-title = "CodeLlama 13B GGUF (quantized) Demo"
+title = f"{config.MODEL_TYPE} - Demo - {config.ACTIVE_MODEL_FILE}"
 
 examples = [
 """
@@ -85,6 +85,7 @@ create a DOT graph to decide a mortgage loan. if credit score is greater than 70
 
 DOT:
 """,
+# This complex DOT prompt worked will with Mistral-7B instruct - Q4_K_M
 """
 create a DOT graph to decide a mortgage loan. if credit score is greater than 700 then check years employed. else reject.
 
@@ -96,6 +97,38 @@ name the DOT nodes with a prefix decision_ or end_ or other_.
 In the labels, refer to the available properties: applicant.credit_score, applicant.years_employed, applicant.other
 
 DOT:
+""",
+# The same complex DOT prompt but using the property names in the text:
+"""
+create a DOT graph to decide a mortgage loan. if credit_score is greater than 700 then check years_employed. else reject.
+
+if years employed is greater than 3 then approve.
+else reject.
+
+name the DOT nodes with a prefix decision_ or end_ or other_.
+
+digraph
+""",
+"""
+What is the overal purpose of this DOT graph:
+
+```
+digraph {
+    rankdir=LR;
+    node [shape = box];
+    start [label="start"];
+    end [label="end"];
+    start -> a [label="credit score > 700"];
+    start -> b [label="credit score < 700"];
+    a -> c [label="years employed > 3"];
+    a -> d [label="years employed < 3"];
+    b -> e [label="reject"];
+    c -> f [label="approve"];
+    d -> g [label="reject"];
+    f -> end;
+    g -> end;
+}
+```
 """,
 """
 What is the overal purpose of this DOT graph:
