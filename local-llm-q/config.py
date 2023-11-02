@@ -8,7 +8,7 @@ MAX_NEW_TOKENS = MODEL_FILE__MISTRAL_7B__Q4_K_M__MAX_TOKENS
 
 MODEL_TYPE = "mistral"
 
-GPU_LAYERS = 31 # 0 means 'no GPU' - if GPU try 50 or less - then probably need ctransformers[cuda] instead of ctransformers
+GPU_LAYERS = 10 # 0 means 'no GPU' - if GPU try 50 or less - then probably need ctransformers[cuda] instead of ctransformers
 #
 # If too high - can actually be slower! - see https://www.reddit.com/r/LocalLLaMA/comments/14kt3hz/nvidia_user_make_sure_you_dont_offload_too_many/
 # - depends on graphics card + the model
