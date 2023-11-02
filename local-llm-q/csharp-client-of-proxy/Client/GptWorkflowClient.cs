@@ -13,7 +13,7 @@ public class GptWorkflowClient
         this.hostname = hostname;
     }
 
-    HttpClient CreateClient() => new HttpClient () { BaseAddress = new Uri($"http://{Config.Host}:{Config.Port}") };
+    HttpClient CreateClient() => new HttpClient () { BaseAddress = new Uri($"http://{hostname}:{port}") };
 
     async Task<string> GetResponse(string request)
     {
