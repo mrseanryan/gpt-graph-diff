@@ -10,5 +10,3 @@ def send_prompt(prompt):
             prompt,	# str  in 'Message' Textbox component
             api_name="/chat"
     )
-
-print(send_prompt("Howdy!"))
