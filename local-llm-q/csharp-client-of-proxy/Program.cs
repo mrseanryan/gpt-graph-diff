@@ -40,8 +40,8 @@ switch (args.Length)
 
 async Task<string> SendUserPrompt(string prompt)
 {
-    var gptWorkflowClient = new Client.GptWorkflowClient(Config.Host, Config.Port);
-    var rsp = await gptWorkflowClient.SendPrompt(prompt);
+    var client = new Client.LlmClient(Config.Host, Config.Port);
+    var rsp = await client.SendPrompt(prompt);
     return rsp;
 }
 

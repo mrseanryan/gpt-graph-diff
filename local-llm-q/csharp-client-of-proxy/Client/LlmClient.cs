@@ -2,12 +2,12 @@ using System.Web;
 
 namespace Client;
 
-public class GptWorkflowClient
+public class LlmClient
 {
     readonly int port;
     readonly string hostname;
 
-    public GptWorkflowClient(string hostname, int port)
+    public LlmClient(string hostname, int port)
     {
         this.port = port;
         this.hostname = hostname;
