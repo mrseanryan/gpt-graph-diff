@@ -1,4 +1,4 @@
-# gpt-diff
+# gpt-graph-diff
 Use an LLM to describe a difference graph between versions of a compositional document.
 
 The LLM generates a summary of user operations, for audit or for source control commit message.
